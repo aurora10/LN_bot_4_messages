@@ -15,8 +15,8 @@ time.sleep(2)
 username = driver.find_element(By.XPATH, '//*[@id="session_key"]')
 password = driver.find_element(By.XPATH, '//*[@id="session_password"]')
 
-username.send_keys("hello@marketorix.com")
-password.send_keys("zbbc6tEurgdSGhQ")
+username.send_keys("")
+password.send_keys("")
 time.sleep(2)
 
 submit = driver.find_element(
