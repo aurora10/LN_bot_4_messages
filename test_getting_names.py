@@ -15,8 +15,8 @@ time.sleep(2)
 username = driver.find_element(By.XPATH, '//*[@id="session_key"]')
 password = driver.find_element(By.XPATH, '//*[@id="session_password"]')
 
-username.send_keys("hello@marketorix.com")
-password.send_keys("zbbc6tEurgdSGhQ")
+username.send_keys("")
+password.send_keys("")
 time.sleep(2)
 
 submit = driver.find_element(
@@ -32,11 +32,11 @@ time.sleep(2)
 all_span = driver.find_elements(
     By.XPATH, "//a[contains(@class,'app-aware-link ')]/span[@dir='ltr']/span[@aria-hidden='true']")
 
-counter = 1
-for i in all_span:
-    print(counter)
-    print(i.text)
-    counter += 1
+# counter = 1
+# for i in all_span:
+#     print(counter)
+#     print(i.text)
+#     counter += 1
 
 idx = [*range(1, 11)]
 greetings = ["Hello", "Hi", "Dear"]
