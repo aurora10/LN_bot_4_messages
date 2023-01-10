@@ -15,8 +15,8 @@ time.sleep(2)
 username = driver.find_element(By.XPATH, '//*[@id="session_key"]')
 password = driver.find_element(By.XPATH, '//*[@id="session_password"]')
 
-username.send_keys("")
-password.send_keys("")
+username.send_keys("zimrob1010@gmail.com")
+password.send_keys("3iver5rr6pta393htful2int7ons")
 time.sleep(2)
 
 submit = driver.find_element(
@@ -27,13 +27,13 @@ time.sleep(2)
 # link to people you need to message
 # https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=ZE(
 
-n_pages = 6
+n_pages = 1
 
-for n in range(4, n_pages):
+for n in range(0, n_pages):
 
     driver.get(
-        "https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&page=" + str(n))
-
+        "" + str(n))
+        # https://www.linkedin.com/search/results/people/?heroEntityKey=urn%3Ali%3Aautocomplete%3A-207530251&keywords=trucking%20company&network=%5B%22F%22%5D&origin=FACETED_SEARCH&position=0&searchId=ca1bb25f-d29b-4b9e-916f-69dc21c7d841&sid=e9.
     time.sleep(2)
 
 # Clicking on Message button
@@ -44,7 +44,7 @@ for n in range(4, n_pages):
     for i in range(0, len(message_buttons)):  # (0, len(message_buttons)) when in production
 
         driver.execute_script("arguments[0].click()", message_buttons[i])
-        time.sleep(2)
+        time.sleep(3)
 
         # ACTIVATE THE MAIN DIV ON MESSAGE FORM
 
@@ -52,7 +52,7 @@ for n in range(4, n_pages):
             By.XPATH, "//div[starts-with(@class,'msg-form__msg-content-container')]")
         driver.execute_script("arguments[0].click()", main_div)
 
-        time.sleep(2)
+        time.sleep(3)
 
 
 # FIND P TAG AND SEND KEYS
@@ -81,7 +81,7 @@ for n in range(4, n_pages):
 
         greeting_idx = random.randint(0, len(greetings)-1)
         message = greetings[greeting_idx] + " " + \
-            all_names[i] + "! Thank you for accepting my connection request! I hope I can bring some value to your network. Have a great day! "
+            all_names[i] + "! Thank you for accepting my connection request! Just wanted to let you know that I am looking to acquire a transport company in your area and if happen to know someone who in looking for an exit, would you let me know? Regards. Rob "
 
         paragraphs[-5].send_keys(message)
         time.sleep(2)
